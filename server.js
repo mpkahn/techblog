@@ -31,10 +31,6 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.get("/", function(req, res) {
-  res.json(path.join(__dirname, "views/layouts/main.handlebars"));
-});
-
 app.use(require('./controllers/'));
 
 app.listen(PORT, () => {
