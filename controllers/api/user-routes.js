@@ -33,20 +33,20 @@ router.post('/logout', (req, res) => {
 
 router.post('/login', async (req, res) => {
   try {
-    const user = await User.findOne({
+    const currentUser = await User.findOne({
       where: {
         username: req.body.username,
       },
     });
 
-    if (!user) {
+    if (!currentUser) {
       res.status(400).json({ message: 'Account not found!' });
       return;
     }
 
-    const validPassword = user.checkPassword(req.body.password);
+    const pwCorrect = currentUser.checkPassword(req.body.password);
 
-    if (!validPassword) {
+    if (!pwCorrect) {
       res.status(400).json({ message: 'Account not found!' });
       return;
     }

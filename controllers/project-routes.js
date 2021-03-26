@@ -5,13 +5,13 @@ const { Post } = require('../models');
 
 router.get('/', withAuth, async (req, res) => {
   try {
-    const postData = await Post.findAll({
+    const postContent = await Post.findAll({
       where: {
         userId: req.session.userId,
       },
     });
 
-    const posts = postData.map((post) => post.get({ plain: true }));
+    const posts = postContent.map((post) => post.get({ plain: true }));
 
     res.render('all-posts-admin', {
       layout: 'project',
@@ -24,10 +24,10 @@ router.get('/', withAuth, async (req, res) => {
 
 router.get('/edit/:id', withAuth, async (req, res) => {
   try {
-    const postData = await Post.findByPk(req.params.id);
+    const postContent = await Post.findByPk(req.params.id);
 
-    if (postData) {
-      const post = postData.get({ plain: true });
+    if (postContent) {
+      const post = postContent.get({ plain: true });
 
       res.render('edit-post', {
         layout: 'project',
