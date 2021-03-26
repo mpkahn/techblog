@@ -32,7 +32,7 @@ router.get('/post/:id', async (req, res) => {
     if (postContent) {
       const post = postContent.get({ plain: true });
 
-      res.render('single-post', { post });
+      res.render('post', { post });
     } else {
       res.status(404).end();
     }
@@ -42,13 +42,13 @@ router.get('/post/:id', async (req, res) => {
 });
 
 
-router.get('/signup', (req, res) => {
+router.get('/register', (req, res) => {
   if (req.session.loggedIn) {
     res.redirect('/');
     return;
   }
 
-  res.render('signup');
+  res.render('register');
 });
 
 
