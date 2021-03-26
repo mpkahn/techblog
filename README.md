@@ -19,15 +19,14 @@ This application is a express based tech blog that allows users to create an acc
 
 ## Usage 
 
-**** Should be hosted at https://lit-oasis-64674.herokuapp.com/
-
-* HOWEVER PLEASE WATCH VIDEO FOR EXPLANATION: https://drive.google.com/file/d/1h18mbDEV20e2EQWzAnVodNxX1fmMTryL/view
+* Should be hosted at https://lit-oasis-64674.herokuapp.com/
 
 * On site, view projects on main page (if any)
 * Click log in at the top
 * Navigate to register new account
 * After creating account, go to "my projects" and click "new post" to create project postings
 * View projects on main page or edit them in "my projects"
+* Click on other projects to leave comments
 
 
 ## Credits
