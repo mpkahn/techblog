@@ -108,7 +108,7 @@ input {
 }
 
 .nav-item {
-  margin: 0 40px;
+  margin: 10px;
 }
 
 .nav-item a {
@@ -127,12 +127,11 @@ input {
 
 .app-title {
   font-size: 3rem;
-  background-color: var(--primary);
+  background-color: white;
   color: var(--dark);
-  padding: 0 10px;
+  padding: 11px;
   display: inline-block;
   border-radius: var(--border-radius);
-  box-shadow: 6px 5px var(--light-dark);
 }
 
 .app-title a {
