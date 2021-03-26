@@ -17,7 +17,7 @@ const editForm = async function(event) {
     }
   });
 
-  document.location.replace('/dashboard');
+  document.location.replace('/project');
 };
 
 const deleteAction = async function() {
@@ -25,7 +25,7 @@ const deleteAction = async function() {
     method: 'DELETE'
   });
 
-  document.location.replace('/dashboard');
+  document.location.replace('/project');
 };
 
 document

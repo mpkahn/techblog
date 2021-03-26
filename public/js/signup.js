@@ -14,7 +14,7 @@ const signup = async function(event) {
   });
 
   if (response.ok) {
-    document.location.replace('/dashboard');
+    document.location.replace('/project');
   } else {
     alert('Sign up failure, please try again');
   }
