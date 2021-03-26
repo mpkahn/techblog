@@ -5,13 +5,13 @@ const { Post } = require('../../models/');
 
 router.put('/:id', withAuth, async (req, res) => {
   try {
-    const [affectedRows] = await Post.update(req.body, {
+    const [rows] = await Post.update(req.body, {
       where: {
         id: req.params.id,
       },
     });
 
-    if (affectedRows > 0) {
+    if (rows > 0) {
       res.status(200).end();
     } else {
       res.status(404).end();
@@ -26,8 +26,8 @@ router.post('/', withAuth, async (req, res) => {
   const body = req.body;
 
   try {
-    const newPost = await Post.create({ ...body, userId: req.session.userId });
-    res.json(newPost);
+    const postNew = await Post.create({ ...body, userId: req.session.userId });
+    res.json(postNew);
   } catch (err) {
     res.status(500).json(err);
   }
@@ -36,13 +36,13 @@ router.post('/', withAuth, async (req, res) => {
 
 router.delete('/:id', withAuth, async (req, res) => {
   try {
-    const [affectedRows] = Post.destroy({
+    const [rows] = Post.destroy({
       where: {
         id: req.params.id,
       },
     });
 
-    if (affectedRows > 0) {
+    if (rows > 0) {
       res.status(200).end();
     } else {
       res.status(404).end();
